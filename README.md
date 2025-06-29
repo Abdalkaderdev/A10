@@ -1,76 +1,122 @@
-# A10 Apartment 360° Virtual Tour
+# Queen Towers - Apartment A10 - 360° Panoramic View
 
-## Overview
-This project is a Marzipano-based 360° virtual tour for the A10 apartment. It allows users to explore the apartment's spaces interactively, switch between rooms, zoom, and enjoy a seamless immersive experience on desktop and mobile devices.
+## 🏢 Project Overview
 
-## Features
-- Interactive 360° panoramic views
-- Scene (room) switching via hotspots or scene list
-- View control buttons for navigation and zoom
-- Fullscreen mode support (with fallback)
-- Autorotate toggle
-- Responsive design for desktop and mobile
-- Info and link hotspots
+This project is an interactive 360° virtual tour of **Apartment A10** in Queen Towers, Erbil, Iraq. Explore every room and detail from any device, with smooth navigation and immersive features designed for real estate, design, and marketing use cases.
 
-## Available Spaces (Scenes)
-The following spaces are available in this tour:
+## 🌟 Features
 
-- Entrance
-- Hall
-- balcony
-- bathroom
-- room
-- balcony.
+- **Interactive 360° Panoramas**: Navigate through multiple rooms and spaces
+- **Multiple Viewpoints**: Explore different angles and perspectives in each room
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+- **Smooth Navigation**: Intuitive controls for panning, zooming, and scene switching
+- **Auto-rotation**: Optional automatic rotation for hands-free viewing
+- **Fullscreen Mode**: Immersive viewing experience
 
-## Technology Stack
-- [Marzipano](http://www.marzipano.net/) (WebGL-based 360° media viewer)
-- JavaScript (vanilla)
-- HTML5 & CSS3
-- [Bowser](https://github.com/lancedikson/bowser) (browser detection)
-- [screenfull.js](https://github.com/sindresorhus/screenfull.js) (fullscreen API)
+## 🏠 Available Spaces
 
-## How to Use
-- **Navigation:** Use your mouse or touch to drag and look around.
-- **Zoom:** Use the view control buttons or your mouse wheel/pinch gesture.
-- **Switch Scenes:** Click hotspots in the view or use the scene list.
-- **Fullscreen:** Click the fullscreen button (if available) to enter/exit fullscreen mode.
-- **Autorotate:** Toggle autorotation with the autorotate button.
+The virtual tour includes the following areas:
 
-## Project Structure
-```text
-app-files/
-  data.js           # Tour data (scenes, settings)
-  index.html        # Main HTML file
-  index.js          # Main JavaScript logic
-  style.css         # Stylesheet
-  img/              # UI and hotspot images
-  tiles/            # Scene image tiles (by room)
-  vendor/           # Third-party libraries (marzipano.js, bowser.min.js, etc.)
-LICENSE.txt         # License information
-README.md           # This documentation
+1. Entrance
+2. Hall
+3. balcony
+4. bathroom
+5. room
+6. balcony.
+
+## 🛠️ Technology Stack
+
+- **Marzipano**: 360° panorama viewer library
+- **HTML5/CSS3**: Modern web standards
+- **JavaScript**: Interactive functionality
+- **Responsive Design**: Mobile-first approach
+
+## 🚀 Live Demo
+
+[https://abdalkaderdev.github.io/A10/](https://abdalkaderdev.github.io/A10/)
+
+## 📱 How to Use
+
+1. **Navigation**: Use mouse/touch to drag and explore the panorama
+2. **Zoom**: Use scroll wheel or pinch gestures to zoom in/out
+3. **Scene Switching**: Click on room names in the sidebar to switch between spaces
+4. **Auto-rotation**: Toggle the play button for automatic rotation
+5. **Fullscreen**: Click the fullscreen button for immersive viewing
+
+## 🏗️ Project Structure
+
+```
+[project-root]/
+├── docs/
+│   ├── index.html          # Main application file
+│   ├── index.js            # Application logic
+│   ├── data.js             # Scene and panorama data
+│   ├── style.css           # Styling and layout
+│   ├── img/                # UI icons and images
+│   ├── tiles/              # Panoramic image tiles
+│   │   ├── [scene-folders]/
+│   └── vendor/             # Third-party libraries
+│       ├── marzipano.js    # Panorama viewer
+│       ├── bowser.min.js   # Browser detection
+│       └── screenfull.min.js # Fullscreen API
+├── LICENSE.txt             # License file
+└── README.md               # Project documentation
 ```
 
-## Local Development
-1. **Install a local web server** (e.g., [http-server](https://www.npmjs.com/package/http-server), Python's `http.server`, or similar).
-2. **Start the server** in the project root or `app-files` directory:
-   - Node.js: `npx http-server app-files`
-   - Python 3: `cd app-files && python -m http.server 8080`
-3. **Open** `http://localhost:8080` in your browser.
+## 📍 Location
 
-> **Note:** Opening `index.html` directly with `file://` may not work due to browser security restrictions.
+Queen Towers, Apartment A10, Erbil, Iraq
 
-## Customization Tips
-- **Add/Edit Scenes:** Modify `app-files/data.js` to add or update scenes and hotspots.
-- **Change UI:** Edit `app-files/style.css` and images in `app-files/img/`.
-- **Logic/Features:** Extend or modify `app-files/index.js` for custom behaviors.
-- **Settings:** Adjust the `settings` object in `data.js` for features like fullscreen, autorotate, and view controls.
+## 🎯 Use Cases
 
-## License
-See [LICENSE.txt](LICENSE.txt) for details. This project is based on the Marzipano Tool and is provided under the Apache License 2.0.
+- **Real Estate**: Virtual property tours for potential buyers/renters
+- **Interior Design**: Showcase design and layout concepts
+- **Marketing**: Interactive property presentations
+- **Documentation**: Visual record of apartment features and condition
 
-## Author & Contact
-- **Author:** [Your Name Here]
-- **Contact:** [your.email@example.com]
+## 🔧 Development
+
+### Local Development
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Abdalkaderdev/A10.git
+   cd A10
+   ```
+
+2. Open `docs/index.html` in a web browser or serve locally:
+   ```bash
+   # Using Python
+   python -m http.server 8000
+   
+   # Using Node.js
+   npx serve docs
+   ```
+
+3. Visit `http://localhost:8000/docs` in your browser
+
+### Customization
+
+- **Add New Scenes**: Modify `docs/data.js` to include additional panoramic scenes
+- **Update Images**: Replace tiles in the `docs/tiles/` directory with new panoramic images
+- **Styling**: Customize appearance by editing `docs/style.css`
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE.txt).
+
+## 👨‍💻 Author
+
+Abdalkaderdev - [GitHub Profile](https://github.com/Abdalkaderdev)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📞 Contact
+
+For questions or support, please open an issue on GitHub or contact the developer.
 
 ---
-*Generated and customized with the Marzipano Tool.* 
+
+*Experience the future of virtual property tours with Queen Towers Apartment A10's immersive 360° panoramic view.* 
