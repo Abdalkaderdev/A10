@@ -828,3 +828,36 @@ body.view-control-buttons .viewControlButton {
 .viewControlButton-6 {
   margin-left: 105px;
 }
+
+/* Accessibility: Focus outlines for all buttons */
+button:focus, .scene:focus, [tabindex="0"]:focus {
+  outline: 3px solid #FFD600;
+  outline-offset: 2px;
+  z-index: 10001;
+}
+
+/* Use :focus-visible for keyboard navigation only */
+button:focus:not(:focus-visible), .scene:focus:not(:focus-visible), [tabindex="0"]:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* High contrast for controls */
+button, .viewControlButton {
+  color: #fff;
+  background-color: #222;
+  border: 2px solid #FFD600;
+  border-radius: 6px;
+  transition: box-shadow 0.2s;
+}
+button:active, .viewControlButton:active {
+  box-shadow: 0 0 0 2px #FFD600;
+}
+
+/* Add visually hidden class for screen reader only text (if needed) */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
