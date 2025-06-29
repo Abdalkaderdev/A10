@@ -1,70 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>A10</title>
 <meta charset="utf-8">
-<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
 <style> @-ms-viewport { width: device-width; } </style>
 <link rel="stylesheet" href="vendor/reset.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="multiple-scenes ">
 
-<!-- Main 360 pano container -->
-<div id="pano" aria-label="360 degree view" tabindex="0"></div>
+<div id="pano"></div>
 
-<!-- Scene list navigation -->
-<nav id="sceneList" aria-label="Scene List">
+<div id="sceneList">
   <ul class="scenes">
-    <li><button class="scene" data-id="0-entrance" aria-label="Go to Entrance" tabindex="0">Entrance</button></li>
-    <li><button class="scene" data-id="1-hall" aria-label="Go to Hall" tabindex="0">Hall</button></li>
-    <li><button class="scene" data-id="2-balcony" aria-label="Go to Balcony" tabindex="0">balcony</button></li>
-    <li><button class="scene" data-id="3-bathroom" aria-label="Go to Bathroom" tabindex="0">bathroom</button></li>
-    <li><button class="scene" data-id="4-room" aria-label="Go to Room" tabindex="0">room</button></li>
-    <li><button class="scene" data-id="5-balcony" aria-label="Go to Balcony 2" tabindex="0">balcony.</button></li>
+    <a href="javascript:void(0)" class="scene" data-id="0-entrance"><li class="text">Entrance</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="1-hall"><li class="text">Hall</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="2-balcony"><li class="text">balcony</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="3-bathroom"><li class="text">bathroom</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="4-room"><li class="text">room</li></a>
+    <a href="javascript:void(0)" class="scene" data-id="5-balcony"><li class="text">balcony.</li></a>
   </ul>
-</nav>
+</div>
 
-<!-- Title bar -->
-<header id="titleBar">
-  <h1 class="sceneName" tabindex="0"></h1>
-</header>
+<div id="titleBar">
+  <div class="sceneName"></div>
+</div>
 
-<!-- UI Controls: All are buttons for accessibility -->
-<button id="autorotateToggle" aria-label="Toggle autorotate" tabindex="0">
-  <img class="icon off" src="img/play.png" alt="Start autorotate">
-  <img class="icon on" src="img/pause.png" alt="Pause autorotate">
-</button>
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
 
-<button id="fullscreenToggle" aria-label="Toggle fullscreen" tabindex="0">
-  <img class="icon off" src="img/fullscreen.png" alt="Enter fullscreen">
-  <img class="icon on" src="img/windowed.png" alt="Exit fullscreen">
-</button>
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
 
-<button id="sceneListToggle" aria-label="Toggle scene list" tabindex="0">
-  <img class="icon off" src="img/expand.png" alt="Show scene list">
-  <img class="icon on" src="img/collapse.png" alt="Hide scene list">
-</button>
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
 
-<!-- View control buttons -->
-<button id="viewUp" class="viewControlButton viewControlButton-1" aria-label="Look up" tabindex="0">
-  <img class="icon" src="img/up.png" alt="Look up">
-</button>
-<button id="viewDown" class="viewControlButton viewControlButton-2" aria-label="Look down" tabindex="0">
-  <img class="icon" src="img/down.png" alt="Look down">
-</button>
-<button id="viewLeft" class="viewControlButton viewControlButton-3" aria-label="Look left" tabindex="0">
-  <img class="icon" src="img/left.png" alt="Look left">
-</button>
-<button id="viewRight" class="viewControlButton viewControlButton-4" aria-label="Look right" tabindex="0">
-  <img class="icon" src="img/right.png" alt="Look right">
-</button>
-<button id="viewIn" class="viewControlButton viewControlButton-5" aria-label="Zoom in" tabindex="0">
-  <img class="icon" src="img/plus.png" alt="Zoom in">
-</button>
-<button id="viewOut" class="viewControlButton viewControlButton-6" aria-label="Zoom out" tabindex="0">
-  <img class="icon" src="img/minus.png" alt="Zoom out">
-</button>
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
 
 <script src="vendor/screenfull.min.js" ></script>
 <script src="vendor/bowser.min.js" ></script>
