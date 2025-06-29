@@ -201,6 +201,14 @@
   }
 
   function switchScene(scene) {
+    // Ensure UI control classes are always present after scene switch
+    if (data.settings.viewControlButtons) {
+      document.body.classList.add('view-control-buttons');
+    }
+    if (data.settings.fullscreenButton) {
+      document.body.classList.add('fullscreen-enabled');
+    }
+    console.log('Ensured UI control classes after scene switch');
     stopAutorotate();
     scene.view.setParameters(scene.data.initialViewParameters);
     scene.scene.switchTo();
@@ -412,5 +420,69 @@
   // Scene list uses <button> for each scene for accessibility.
   // Debug log for accessibility setup:
   console.log('Accessibility: All UI controls are keyboard accessible and have ARIA labels.');
+
+  // Accessibility: Keyboard shortcuts for navigation and controls
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+    switch (e.key) {
+      case 'ArrowUp':
+        viewUpElement && viewUpElement.click();
+        console.log('Keyboard: Look up');
+        break;
+      case 'ArrowDown':
+        viewDownElement && viewDownElement.click();
+        console.log('Keyboard: Look down');
+        break;
+      case 'ArrowLeft':
+        viewLeftElement && viewLeftElement.click();
+        console.log('Keyboard: Look left');
+        break;
+      case 'ArrowRight':
+        viewRightElement && viewRightElement.click();
+        console.log('Keyboard: Look right');
+        break;
+      case '+':
+      case '=':
+        viewInElement && viewInElement.click();
+        console.log('Keyboard: Zoom in');
+        break;
+      case '-':
+        viewOutElement && viewOutElement.click();
+        console.log('Keyboard: Zoom out');
+        break;
+      case 'f':
+      case 'F':
+        fullscreenToggleElement && fullscreenToggleElement.click();
+        console.log('Keyboard: Toggle fullscreen');
+        break;
+      case 'a':
+      case 'A':
+        autorotateToggleElement && autorotateToggleElement.click();
+        console.log('Keyboard: Toggle autorotate');
+        break;
+      case 's':
+      case 'S':
+        sceneListToggleElement && sceneListToggleElement.click();
+        console.log('Keyboard: Toggle scene list');
+        break;
+      default:
+        break;
+    }
+  });
+
+  // Accessibility: Announce scene changes via ARIA live region
+  function announceScene(scene) {
+    var ariaLive = document.getElementById('ariaLive');
+    if (ariaLive) {
+      ariaLive.textContent = 'Scene changed to ' + scene.data.name;
+      console.log('ARIA live: Scene changed to', scene.data.name);
+    }
+  }
+  // Call announceScene in switchScene
+  var originalSwitchScene = switchScene;
+  switchScene = function(scene) {
+    originalSwitchScene(scene);
+    announceScene(scene);
+  };
 
 })();
